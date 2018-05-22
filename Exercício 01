@@ -1,0 +1,38 @@
+/*
+ * Construir um programa que concatene uma string s1 em uma outra string s2 na própria string s2. 
+ * Por  exemplo: 
+ *
+ * Digite a  string s1: Quem ri por último. 
+ * Digite a string s2:  Ri  melhor.
+ * Nova string s2: Quem ri por último. Ri melhor.
+ */
+
+using System;
+
+namespace Exercicio1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaração de variáveis
+            string s1, s2;
+
+            // Recebendo valores do usuário
+            Console.Clear();
+            Console.WriteLine();
+            Console.Write(" Entre com uma frase qualquer: ");
+            s1 = Console.ReadLine();
+            Console.Write(" Entre com uma segunda frase qualquer: ");
+            s2 = Console.ReadLine();
+
+            // Imprimindo string concatenada
+            s2 = s1 + " " + s2;
+            Console.WriteLine();
+            Console.Write(" String concatenada: \"{0}\" ", s2);
+            Console.WriteLine();
+            Console.WriteLine(" Pressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+    }
+}
