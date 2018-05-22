@@ -31,29 +31,42 @@ namespace Exercicio1
             Console.Write(" Entre com a sequência de DNA: ");
             s1 = Console.ReadLine();
 
-            // Preenchendo string 's2' de acordo com os valores da tabela
+             // Preenchendo string 's2' de acordo com os valores da tabela
             for (int i = 0; i < s1.Length; i++)
             {
-                switch (s1[i])
+                // Convertendo valores
+                // A para U
+                if (s1[i].Equals('A') || s1[i].Equals('a'))
                 {
-                    case 'A':
-                        s2 = s2 + "U";
-                        break;
-                    case 'G':
-                        s2 = s2 + "C";
-                        break;
-                    case 'C':
-                        s2 = s2 + "G";
-                        break;
-                    case 'T':
-                        s2 = s2 + "A";
-                        break;
-                    case ' ':
-                        s2 = s2 + " ";
-                        break;
-                    default:
-                        Console.WriteLine(" O {0}º caractere da sequência é inválido.", (i + 1));
-                        break;
+                    s2 = s2 + "U";
+                }
+                // G para C
+                else if (s1[i].Equals('G') || s1[i].Equals('g'))
+                {
+                    s2 = s2 + "C";
+                }
+                // C para G
+                else if (s1[i].Equals('C') || s1[i].Equals('c'))
+                {
+                    s2 = s2 + "G";
+                }
+                // T para A
+                else if (s1[i].Equals('T') || s1[i].Equals('t'))
+                {
+                    s2 = s2 + "A";
+                }
+                // " " para " "
+                else if (s1[i].Equals(' '))
+                {
+                    s2 = s2 + " ";
+                }
+                // Nenhum dos casos
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine();
+                    Console.WriteLine(" O valor do {0}º caractere da sequência não é válido.", (i + 1));
+                    Console.ReadKey();
                 }
             }
 
