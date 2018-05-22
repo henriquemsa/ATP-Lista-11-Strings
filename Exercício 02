@@ -1,0 +1,71 @@
+/*
+ * Uma string é utilizada para representar uma das fitas de uma cadeia de DNA. Para tanto, as bases Adenina, Guanina, Citosina, Timina e Uracila 
+ * são representadas pelas letras A, G, C, T e U, respectivamente. Deseja-se construir um programa que, dada uma sequência de DNA, seja fornecida 
+ * a sequência de RNA‐m equivalente de acordo com a transformação indicada na tabela  abaixo.
+ * 
+ *                                     DNA              RNA-m
+ *                                      A                 U
+ *                                      G                 C
+ *                                      C                 G
+ *                                      T                 A
+ *                   
+ *   Teste seu programa para a seguinte fita de uma cadeia de DNA e mostre as duas strings na tela: 
+ *   
+ *                             A   T   C   C   G   T   T   A   A
+ */
+
+using System;
+
+namespace Exercicio1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaração de variáveis
+            string s1, s2 = "";
+
+            // Recebendo valores do usuário
+            Console.Clear();
+            Console.WriteLine();
+            Console.Write(" Entre com a sequência de DNA: ");
+            s1 = Console.ReadLine();
+
+            // Preenchendo string 's2' de acordo com os valores da tabela
+            for (int i = 0; i < s1.Length; i++)
+            {
+                switch (s1[i])
+                {
+                    case 'A':
+                        s2 = s2 + "U";
+                        break;
+                    case 'G':
+                        s2 = s2 + "C";
+                        break;
+                    case 'C':
+                        s2 = s2 + "G";
+                        break;
+                    case 'T':
+                        s2 = s2 + "A";
+                        break;
+                    case ' ':
+                        s2 = s2 + " ";
+                        break;
+                    default:
+                        Console.WriteLine(" O {0}º caractere da sequência é inválido.", (i + 1));
+                        break;
+                }
+            }
+
+            // Imprimindo strings
+            Console.Clear();
+            Console.WriteLine();
+            Console.Write(" DNA: \"{0}\" ", s1);
+            Console.WriteLine();
+            Console.Write(" RNA: \"{0}\" ", s2);
+            Console.WriteLine();
+            Console.WriteLine(" Pressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+    }
+}
