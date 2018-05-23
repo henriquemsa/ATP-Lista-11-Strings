@@ -1,0 +1,61 @@
+/* 
+ * Uma  palavra é denominada um palíndromo se for invertida e a leitura da mesma permanecer sem nenhuma alteração. 
+ * Algumas palavras que são palíndromos são: aba, radar, reter, rever, rir, rotor, dentre outras. 
+ * Construir um programa que detecte se uma palavra (string) digitada pelo usuário é ou não um palíndromo e enviar um aviso na tela.
+ */
+
+using System;
+
+namespace Exercicio3
+{
+    class Program
+    {
+        static void TestePalindromo(string texto)
+        {
+            char[] caracteres;
+
+            // Convertendo a string em um array de char
+            caracteres = texto.ToCharArray();
+
+            // Invertendo as posições do array de char
+            Array.Reverse(caracteres);
+
+            // Criando uma nova string com o texto invertido
+            string textoInvertido = new string(caracteres);
+           
+            // Testando se as strings são iguais em letras minúsculas
+            if (texto.ToLower().Equals(textoInvertido.ToLower()))
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.WriteLine(" A palavra \"{0}\" é um palíndromo.", texto);
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.WriteLine(" A palavra \"{0}\" não é um palíndromo.", texto);
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            // Declaração de variáveis
+            string texto;
+
+            // Recebendo string do usuário
+            Console.Clear();
+            Console.WriteLine();
+            Console.Write(" Escreva uma palavra ou frase: ");
+            texto = Console.ReadLine();
+
+            // Chamando método 'TestePalindromo'
+            TestePalindromo(texto);
+
+            // Finalizando o programa
+            Console.WriteLine();
+            Console.WriteLine(" Pressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+    }
+}
